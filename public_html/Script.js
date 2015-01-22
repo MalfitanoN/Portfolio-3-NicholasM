@@ -17,6 +17,12 @@ $("document").ready(function(){
     
     $("#tabs").draggable();
     
+    $("#show").css("visibility", "hidden");
+    
+    $("#hide").bind("click", hideThePage);
+    
+    $("#show").bind("click", showThePage);
+    
  });
  
  function removeAPara(){
@@ -43,4 +49,15 @@ $("document").ready(function(){
  
  function mouseClick(){
      $("p").html("YEA");
+ }
+ 
+ function hideThePage(){
+     $("#show").css("visibility", "visible");
+     $("div").hide("fade", {}, 2500);
+     $("#show").show("fade", {}, 2500);
+ }
+ 
+ function showThePage(){
+     $("div").show("fade", {}, 2500);
+     $("#show").hide("fade", {}, 2500);
  }
